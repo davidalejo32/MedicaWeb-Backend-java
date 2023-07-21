@@ -10,81 +10,75 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Doctor {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
-  private String name;
-  private String lastName;
-  private Long office;
-  private String email;
-  
-  @ManyToOne
-  @JoinColumn(name = "specialty_id")
-  private Specialty specialty;
-  
-  public Doctor() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private String lastName;
+    private Long office;
+    private String email;
 
-  }
+    @ManyToOne
+    @JoinColumn(name = "specialty_id")
+    private Specialty specialty;
 
+    public Doctor() {
 
-  public Doctor(Long id, String name, String lastName, Long office, String email) {
-    this.id = id;
-    this.name = name;
-    this.lastName = lastName;
-    this.office = office;
-    this.email = email;
-  }
+    }
 
+    public Doctor(String name, String lastName, Long office, String email, Specialty specialty) {
+        this.name = name;
+        this.lastName = lastName;
+        this.office = office;
+        this.email = email;
+        this.specialty = specialty;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public Long getOffice() {
+        return office;
+    }
 
+    public void setOffice(Long office) {
+        this.office = office;
+    }
 
-  public String getLastName() {
-    return lastName;
-  }
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    public Specialty getSpecialty() {
+        return specialty;
+    }
 
-
-  public Long getOffice() {
-    return office;
-  }
-
-
-  public void setOffice(Long office) {
-    this.office = office;
-  }
-
-
-  public String getEmail() {
-    return email;
-  }
-
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  
-  
+    public void setSpecialty(Specialty specialty) {
+        this.specialty = specialty;
+    }
 }

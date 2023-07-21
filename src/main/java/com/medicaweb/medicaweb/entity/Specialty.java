@@ -24,6 +24,16 @@ public class Specialty {
   public Specialty() {
   }
 
+  
+
+  public Specialty(Long id, String name, List<Doctor> doctors) {
+    this.id = id;
+    this.name = name;
+    this.doctors = doctors;
+  }
+
+
+
   public Long getId() {
     return id;
   }
